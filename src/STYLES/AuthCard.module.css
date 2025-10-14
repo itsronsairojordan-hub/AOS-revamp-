@@ -1,0 +1,86 @@
+.card {
+  background: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  padding: 2.5rem 2rem;
+  max-width: 800px;
+  width: 100%;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.transparenCard {
+  background: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  padding: 2.5rem 2rem;
+  max-width: 400px;
+  width: 100%;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.title {
+  color: #1e40af;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #24b4f2;
+  font-size:1rem;
+  font-weight: 480;
+  margin-bottom: 1.5rem;
+}
+
+.input {
+  border: 1px solid #dbeafe;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+  width: 100%;
+}
+
+.input:focus {
+  border-color: #2563eb;
+}
+
+.button {
+  color: white;
+  background-color:  #2563eb 100%;
+  justify-content: center;
+  display: flex;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.75rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+  margin-top: 1rem; 
+}
+
+.button:hover {
+  background-color:  #2563eb 100%;
+}
+
+.link {
+  color: #2563eb;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.switch {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.97rem;
+}
