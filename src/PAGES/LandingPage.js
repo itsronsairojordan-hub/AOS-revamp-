@@ -150,7 +150,7 @@ import { Link } from "react-router-dom";
               <a href="#search" className="text-gray-700 hover:text-blue-600 transition-colors">Search</a>
               <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
             </div>
-          )}
+          )}  
           
           <div ref={userDropdown} className="relative inline-block">
           {/* Button login and register */}
