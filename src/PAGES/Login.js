@@ -6,7 +6,8 @@ const Login = () => (
   <div
     style={{
       minHeight: "100vh",
-      background: "linear-gradient(135deg, #2563eb 0%, #6aa9f0 50%, #e9f0f8 100%)",
+      //background: "linear-gradient(135deg, #2563eb 0%, #6aa9f0 50%, #e9f0f8 100%)",
+      backgroundColor: "#c6ebbe",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
@@ -14,12 +15,14 @@ const Login = () => (
   >
     {/* Outer flex container holding both cards */}
     <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center", // 🔑 adds space between the two cards so they don’t overlap
-      }}
-    >
+
+  style={{
+    display: "flex",
+    alignItems: "stretch", // make both cards the same height
+    justifyContent: "flex-start", // remove gap between them
+  }}
+>
+
       {/* LEFT: Login card (keep your original sizing/fonts here) */}
       <div className={styles.transparenCard}>
         <div style={{ display: "flex", justifyContent: "center", position: "relative", zIndex: "2",}}>
@@ -124,37 +127,53 @@ const Login = () => (
       </div>
 
       {/* RIGHT: Glass card */}
-      <div
+      {/* RIGHT: Image card */}
+<div className="relative w-1/2 rounded-r-2xl overflow-hidden" style={{ 
+    minHeight: "100%",
+  }}>
+
+  {/* Background image */}
+  <img
+  src="/images/try.png"
+  alt="Building"
+  className="absolute inset-0 w-full h-full object-cover"
+/>
+         {/* Optional: Dark overlay for better text visibility */}
+    <div className="absolute inset-0 bg-black/20"></div>
+    
+    {/* Content overlay - properly centered */}
+    <div 
+      className="relative z-10" 
+      style={{ 
+        display: "flex", 
+        flexDirection: "column", 
+        alignItems: "center", 
+        justifyContent: "center", 
+        padding: "2rem"
+      }}
+    >
+      <img 
+        src="/images/AOSlogo(main).svg" 
+        alt="Logo" 
+        style={{ height: 120 }} 
+      />
+      <h2
         style={{
-          borderRadius: "0 1.5rem 1.5rem 0",
-          height: "645px",
-          width: "450px",
-          background: "rgba(255, 255, 255, 0.54)",
-          backdropFilter: "blur(16px)",
-          WebkitBackdropFilter: "blur(16px)",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          padding: "2rem",
-          boxShadow: "10px 0 35.px rgba(0,0,0,0.20)",  
+          fontSize: "1.8rem",
+        marginTop: "1rem",
+        textAlign: "center",
+        color: "#ffffff",
+        textShadow: "0 2px 4px rgba(0,0,0,0.5)",
+        fontWeight: "600",
         }}
       >
-        <img src="/images/AOSlogo(main).svg" alt="Logo" style={{ height: 120 }} />
-        <h2
-          style={{
-            fontSize: "1.8rem",
-            marginTop: "1rem",
-            textAlign: "center",
-            color: "#0f172a",
-          }}
-        >
-          Artificial Intelligence <br />
-          Driving Results For The Travel Industry
-        </h2>
-      </div>
+        Artificial Intelligence <br />
+        Driving Results For The Travel Industry
+      </h2>
     </div>
   </div>
+</div>
+</div>
 );
 
 export default Login;
