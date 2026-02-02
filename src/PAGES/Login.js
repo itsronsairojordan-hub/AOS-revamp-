@@ -6,8 +6,11 @@ const Login = () => (
   <div
     style={{
       minHeight: "100vh",
-      //background: "linear-gradient(135deg, #2563eb 0%, #6aa9f0 50%, #e9f0f8 100%)",
-      backgroundColor: "#c6ebbe",
+      backgroundImage: "url('/images/bg-loginpic.jpg')",
+      backgroundColor: "rgba(17, 21, 67, 0.5)",
+      backgroundBlendMode: "multiply",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
@@ -15,30 +18,31 @@ const Login = () => (
   >
     {/* Outer flex container holding both cards */}
     <div
-
-  style={{
-    display: "flex",
-    alignItems: "stretch", // make both cards the same height
-    justifyContent: "flex-start", // remove gap between them
-  }}
->
-
-      {/* LEFT: Login card (keep your original sizing/fonts here) */}
+      style={{
+        display: "flex",
+        alignItems: "stretch",     // make both cards the same height
+        justifyContent: "flex-start", // remove gap between them
+      }}
+    >
+      {/* LEFT: Login card */}
       <div className={styles.transparenCard}>
-        <div style={{ display: "flex", justifyContent: "center", position: "relative", zIndex: "2",}}>
+        {/* Logo */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            position: "relative",
+            zIndex: "2",
+          }}
+        >
           <img
             src="/images/AOSlogo(sub).svg"
             alt="Logo"
             style={{ height: 60, marginBottom: "1rem" }}
           />
         </div>
-        <div
-          style={{ display: "flex", justifyContent: "center" }}
-          className={styles.subtitle}
-        >
-          Welcome Back! Please enter your details.
-        </div>
 
+        {/* Login form */}
         <form>
           <input
             className={styles.input}
@@ -72,15 +76,21 @@ const Login = () => (
               alignItems: "center",
             }}
             className={styles.button}
-            type="submit">
+            type="submit"
+          >
             Login
           </button>
         </form>
 
+        {/* Switch to signup */}
         <div className={styles.switch}>
-          Don’t have an account? <a href="/register" className={styles.link}>Sign Up</a>
+          Don’t have an account?{" "}
+          <a href="/register" className={styles.link}>
+            Sign Up
+          </a>
         </div>
 
+        {/* Social login */}
         <div
           style={{
             textAlign: "center",
@@ -126,54 +136,53 @@ const Login = () => (
         </div>
       </div>
 
-      {/* RIGHT: Glass card */}
       {/* RIGHT: Image card */}
-<div className="relative w-1/2 rounded-r-2xl overflow-hidden" style={{ 
+<div
+  className="relative rounded-r-2xl overflow-hidden"
+  style={{
+    flex: 1,
+    display: "flex",
     minHeight: "100%",
-  }}>
-
+  }}
+>
   {/* Background image */}
   <img
-  src="/images/try.png"
-  alt="Building"
-  className="absolute inset-0 w-full h-full object-cover"
-/>
-         {/* Optional: Dark overlay for better text visibility */}
-    <div className="absolute inset-0 bg-black/20"></div>
-    
-    {/* Content overlay - properly centered */}
-    <div 
-      className="relative z-10" 
-      style={{ 
-        display: "flex", 
-        flexDirection: "column", 
-        alignItems: "center", 
-        justifyContent: "center", 
-        padding: "2rem"
-      }}
-    >
-      <img 
-        src="/images/AOSlogo(main).svg" 
-        alt="Logo" 
-        style={{ height: 120 }} 
-      />
-      <h2
-        style={{
-          fontSize: "1.8rem",
-        marginTop: "1rem",
-        textAlign: "center",
-        color: "#ffffff",
-        textShadow: "0 2px 4px rgba(0,0,0,0.5)",
-        fontWeight: "600",
-        }}
-      >
-        Artificial Intelligence <br />
-        Driving Results For The Travel Industry
-      </h2>
-    </div>
+    src="/images/login pic.jpg"
+    alt="Building"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+
+  {/* Shadow overlay */}
+  <div
+    className="absolute inset-0 rounded-r-2xl"
+    style={{
+      boxShadow: "inset 0 0 30px rgba(0, 0, 0, 0.5)",
+      pointerEvents: "none",
+    }}
+  ></div>
+
+  {/* Dark overlay */}
+  <div className="absolute inset-0 bg-black/20"></div>
+
+  {/* Content overlay (TOP RIGHT) */}
+  <div
+    className="relative z-10 flex justify-end items-start"
+    style={{
+      padding: "1rem", // spacing from edges
+      width: "100%",
+      marginLeft: "19rem",
+    }}
+  >
+    <img
+      src="/images/AOSlogo(Login).svg"
+      alt="Logo"
+      style={{ height: 80, marginTop: "-.5rem" }}
+    />
   </div>
 </div>
-</div>
+
+    </div>
+  </div>
 );
 
 export default Login;
